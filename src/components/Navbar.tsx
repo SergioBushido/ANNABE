@@ -108,10 +108,12 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden flex items-center ml-4 pl-2">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-gray-300 hover:text-white focus:outline-none"
+                            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+                            aria-expanded={isOpen}
                         >
                             <i className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-2xl`}></i>
                         </button>
