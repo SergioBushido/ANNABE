@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANTENIMIENTOS ANNABE | Alexis Arrocha</title>
+    <meta name="description" content="Servicios profesionales de Fontanería, Electricidad y Gas por Alexis Arrocha. Calidad y confianza.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a', // Slate 900
+                            darker: '#020617', // Slate 950
+                            accent: '#fbbf24', // Amber 400
+                            accentHover: '#d97706', // Amber 600
+                            gray: '#94a3b8' // Slate 400
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados para efectos específicos */
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animación suave para los iconos */
+        .service-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+            color: #fbbf24;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(251, 191, 36, 0.3);
+            border-color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-brand-accent selection:text-brand-darker">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-brand-darker/95 border-b border-gray-800 backdrop-blur transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <svg class="w-full h-full text-brand-accent drop-shadow-[0_0_5px_rgba(251,191,36,0.5)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Fondo / Forma Base (Hexágono Técnico) -->
+                            <path d="M50 5 L93.3 30 V80 L50 105 L6.7 80 V30 Z" stroke="currentColor" stroke-width="4" fill="none" transform="translate(0 -5)"/>
+                            <!-- Iconos de Servicios Integrados -->
+                            <g transform="translate(0, 0)">
+                                <!-- Rayo (Electricidad) -->
+                                <path d="M50 15 L40 45 H52 L44 75 L64 35 H52 L58 15 Z" fill="currentColor"/>
+                                <!-- Gota (Fontanería) -->
+                                <path d="M32 55 C32 68 42 68 42 55 C42 45 32 35 32 35 C32 35 22 45 22 55 C22 68 32 68 32 55 Z" fill="currentColor" opacity="0.8"/>
+                                <!-- Llama (Gas) -->
+                                <path d="M68 68 C78 68 82 55 75 45 C72 50 72 55 68 55 C64 55 64 50 68 45 C60 35 54 50 54 58 C54 68 62 68 68 68 Z" fill="currentColor" opacity="0.8"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-sans font-bold text-xl tracking-wider text-white">MANTENIMIENTOS <span class="text-brand-accent">ANNABE</span></span>
+                        <span class="text-xs text-brand-gray tracking-widest uppercase">Alexis Arrocha</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-gray-300 hover:text-brand-accent transition-colors font-medium">Inicio</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-brand-accent transition-colors font-medium">Servicios</a>
+                    <a href="#nosotros" class="text-gray-300 hover:text-brand-accent transition-colors font-medium">Nosotros</a>
+                    <a href="#contacto" class="bg-brand-accent hover:bg-brand-accentHover text-brand-darker px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-yellow-500/20">
+                        Contactar
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-gray-800 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#inicio" class="block px-3 py-2 text-gray-300 hover:text-brand-accent hover:bg-gray-800 rounded-md">Inicio</a>
+                <a href="#servicios" class="block px-3 py-2 text-gray-300 hover:text-brand-accent hover:bg-gray-800 rounded-md">Servicios</a>
+                <a href="#nosotros" class="block px-3 py-2 text-gray-300 hover:text-brand-accent hover:bg-gray-800 rounded-md">Nosotros</a>
+                <a href="#contacto" class="block px-3 py-2 text-brand-accent font-bold">Contactar Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center hero-bg">
+        <!-- Overlay Oscuro -->
+        <div class="absolute inset-0 bg-brand-darker/80 bg-gradient-to-t from-brand-darker via-brand-darker/80 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block p-2 px-4 border border-brand-accent/50 rounded-full bg-brand-accent/10 mb-6 backdrop-blur-sm animate-fade-in-up">
+                <span class="text-brand-accent font-semibold tracking-wide uppercase text-sm">Servicio Profesional Garantizado</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-sans font-bold text-white mb-6 leading-tight">
+                Soluciones en <br/>
+                <span class="text-brand-accent">Electricidad, Gas y Fontanería</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                Expertos en mantenimiento integral. Calidad, seguridad y rapidez para su hogar o negocio bajo la supervisión de <strong>Alexis Arrocha</strong>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contacto" class="bg-brand-accent hover:bg-brand-accentHover text-brand-darker font-bold py-4 px-8 rounded text-lg transition-all shadow-[0_0_20px_rgba(251,191,36,0.4)]">
+                    Solicitar Presupuesto
+                </a>
+                <a href="#servicios" class="border border-gray-600 hover:border-brand-accent text-white hover:text-brand-accent font-semibold py-4 px-8 rounded text-lg transition-all bg-brand-darker/50 backdrop-blur-sm">
+                    Nuestros Servicios
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-24 bg-brand-darker relative overflow-hidden">
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-brand-accent/5 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-500/5 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-sans font-bold text-white mb-4">Nuestras Especialidades</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto mb-4"></div>
+                <p class="text-gray-400 max-w-xl mx-auto">
+                    Ofrecemos un servicio técnico completo y especializado en las tres áreas fundamentales de mantenimiento.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1: Fontanería -->
+                <div class="service-card bg-brand-dark border border-gray-800 p-8 rounded-2xl group hover:bg-gray-900/50">
+                    <div class="icon-box w-16 h-16 bg-blue-900/20 text-blue-400 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-transform duration-300">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors">Fontanería</h3>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Reparación de fugas</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Instalación de sanitarios</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Desatascos y tuberías</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Reformas de baño</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2: Electricidad -->
+                <div class="service-card bg-brand-dark border border-gray-800 p-8 rounded-2xl group hover:bg-gray-900/50">
+                    <div class="icon-box w-16 h-16 bg-yellow-900/20 text-brand-accent rounded-2xl flex items-center justify-center text-3xl mb-6 transition-transform duration-300">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors">Electricidad</h3>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Instalaciones completas</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Cuadros eléctricos</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Iluminación LED</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Certificados y boletines</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3: Gas -->
+                <div class="service-card bg-brand-dark border border-gray-800 p-8 rounded-2xl group hover:bg-gray-900/50">
+                    <div class="icon-box w-16 h-16 bg-red-900/20 text-red-500 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-transform duration-300">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors">Gas y Calefacción</h3>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Instalación de calderas</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Revisiones periódicas</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Reparación de fugas</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-2 text-xs"></i> Calefacción central</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros / Alexis Arrocha -->
+    <section id="nosotros" class="py-20 bg-gray-900 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="relative">
+                        <!-- Imagen representativa -->
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a783?q=80&w=2070&auto=format&fit=crop" alt="Trabajador Profesional" class="rounded-lg shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-500 border border-gray-700">
+                        <div class="absolute -bottom-6 -right-6 bg-brand-accent text-brand-darker p-6 rounded shadow-lg hidden md:block">
+                            <p class="font-bold text-2xl">100%</p>
+                            <p class="text-sm font-semibold uppercase">Clientes Satisfechos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-brand-accent font-bold uppercase tracking-widest mb-2">Sobre Nosotros</h4>
+                    <h2 class="text-3xl md:text-4xl font-sans font-bold text-white mb-6">Alexis Arrocha: Compromiso y Profesionalidad</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        En <strong>Mantenimientos Annabe</strong>, entendemos que los problemas de fontanería, electricidad o gas no pueden esperar. Nos dedicamos a ofrecer soluciones rápidas, seguras y duraderas.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Con años de experiencia en el sector, garantizamos un trato cercano y un trabajo bien hecho desde el primer momento. Utilizamos materiales de primera calidad y respetamos las normativas de seguridad vigentes.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-800 p-4 rounded border border-gray-700">
+                            <i class="fas fa-clock text-brand-accent text-xl mb-2"></i>
+                            <h5 class="text-white font-bold">Puntualidad</h5>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded border border-gray-700">
+                            <i class="fas fa-shield-alt text-brand-accent text-xl mb-2"></i>
+                            <h5 class="text-white font-bold">Garantía</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Urgencia -->
+    <section class="bg-brand-accent py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-darker mb-2">¿Necesita una reparación urgente?</h2>
+                <p class="text-brand-darker/80 font-medium">Estamos disponibles para atender sus averías de electricidad, gas o agua.</p>
+            </div>
+            <div class="mt-6 md:mt-0">
+                <a href="tel:+34000000000" class="inline-flex items-center bg-brand-darker text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-brand-darker transition-colors border border-brand-darker">
+                    <i class="fas fa-phone-alt mr-3"></i> Llamar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-24 bg-brand-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-sans font-bold text-white mb-4">Contacte con Nosotros</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto mb-4"></div>
+                <p class="text-gray-400">Solicite presupuesto sin compromiso o consúltenos sus dudas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Info de Contacto -->
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold text-lg">Zona de Servicio</h4>
+                            <p class="text-gray-400 mt-1">Atendemos a toda la región. Servicio a domicilio.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold text-lg">Email</h4>
+                            <p class="text-gray-400 mt-1">info@mantenimientosannabe.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold text-lg">Teléfono</h4>
+                            <p class="text-gray-400 mt-1 cursor-pointer hover:text-brand-accent transition-colors">+34 000 000 000</p>
+                            <p class="text-xs text-gray-500 mt-1">Disponible para urgencias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <form id="contactForm" class="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-400 text-sm font-bold mb-2" for="nombre">Nombre</label>
+                            <input class="w-full bg-gray-800 text-white border border-gray-700 rounded py-3 px-4 focus:outline-none focus:border-brand-accent focus:bg-gray-700 transition-colors" id="nombre" type="text" placeholder="Su nombre" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-sm font-bold mb-2" for="telefono">Teléfono</label>
+                            <input class="w-full bg-gray-800 text-white border border-gray-700 rounded py-3 px-4 focus:outline-none focus:border-brand-accent focus:bg-gray-700 transition-colors" id="telefono" type="tel" placeholder="Su teléfono" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-400 text-sm font-bold mb-2" for="servicio">Tipo de Servicio</label>
+                        <select class="w-full bg-gray-800 text-white border border-gray-700 rounded py-3 px-4 focus:outline-none focus:border-brand-accent focus:bg-gray-700 transition-colors" id="servicio">
+                            <option>Fontanería</option>
+                            <option>Electricidad</option>
+                            <option>Gas</option>
+                            <option>Otro / Consulta General</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-400 text-sm font-bold mb-2" for="mensaje">Mensaje</label>
+                        <textarea class="w-full bg-gray-800 text-white border border-gray-700 rounded py-3 px-4 focus:outline-none focus:border-brand-accent focus:bg-gray-700 transition-colors h-32" id="mensaje" placeholder="Describa su problema..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-accent hover:bg-brand-accentHover text-brand-darker font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">MANTENIMIENTOS ANNABE</h3>
+                    <p class="text-sm">Profesionales a su servicio. Especialistas en fontanería, electricidad y gas gestionados por Alexis Arrocha.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-brand-accent">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-accent">Servicios</a></li>
+                        <li><a href="#nosotros" class="hover:text-brand-accent">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Síguenos</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-brand-accent text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-accent text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-accent text-xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-8 text-center text-xs">
+                <p>&copy; <span id="year"></span> Mantenimientos Annabe. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-all hover:scale-110 flex items-center justify-center">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Actualizar año footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menú Móvil Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Formulario (Simulación)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Enviado con éxito';
+            btn.classList.add('bg-green-500', 'text-white');
+            btn.classList.remove('bg-brand-accent', 'text-brand-darker');
+            
+            setTimeout(() => {
+                this.reset();
+                btn.innerText = originalText;
+                btn.classList.remove('bg-green-500', 'text-white');
+                btn.classList.add('bg-brand-accent', 'text-brand-darker');
+                alert('Gracias por su mensaje. Alexis Arrocha se pondrá en contacto pronto.');
+            }, 2000);
+        });
+
+        // Efecto Navbar al hacer scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-brand-darker/95', 'bg-brand-darker/100');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-brand-darker/100', 'bg-brand-darker/95');
+            }
+        });
+    </script>
+</body>
+</html>
