@@ -80,7 +80,7 @@ export default function Navbar() {
                         </div>
                         <div className="flex flex-col">
                             <span className="font-sans font-bold text-xl tracking-wider text-white">
-                                MANTENIMIENTOS <span className="text-brand-accent">ANNABE</span>
+                                <span className="hidden md:inline">MANTENIMIENTOS </span><span className="text-brand-accent">ANNABE</span>
                             </span>
                             <span className="text-xs text-brand-gray tracking-widest uppercase">
                                 Alexis Arrocha
