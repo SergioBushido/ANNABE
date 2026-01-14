@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Services() {
     return (
@@ -36,10 +37,12 @@ export default function Services() {
                             </div>
                             <div className="w-full md:w-1/2 order-1 md:order-2">
                                 <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative">
-                                    {/* Placeholder for Fontanería Image */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-600">
-                                        <i className="fas fa-faucet text-6xl opacity-20"></i>
-                                    </div>
+                                    <Image
+                                        src="/img/fontaneria.avif"
+                                        alt="Fontanería Profesional"
+                                        fill
+                                        className="object-cover hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -48,13 +51,12 @@ export default function Services() {
                         <div className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="w-full md:w-1/2">
                                 <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative">
-                                    {/* Placeholder for Electricidad Image */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-600">
-                                        <i className="fas fa-bolt text-6xl opacity-20"></i>
-                                    </div>
-                                    <div className="absolute bottom-4 left-4 right-4 text-center text-gray-500 text-xs">
-                                        An array of electrical meters mounted on a wall with visible pipes and wires...
-                                    </div>
+                                    <Image
+                                        src="/img/electricidad.avif"
+                                        alt="Instalación Eléctrica"
+                                        fill
+                                        className="object-cover hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2">
@@ -97,10 +99,12 @@ export default function Services() {
                             </div>
                             <div className="w-full md:w-1/2 order-1 md:order-2">
                                 <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative">
-                                    {/* Placeholder for Gas Image */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-600">
-                                        <i className="fas fa-fire text-6xl opacity-20"></i>
-                                    </div>
+                                    <Image
+                                        src="/img/gasseguro.avif"
+                                        alt="Gas Seguro"
+                                        fill
+                                        className="object-cover hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
                             </div>
                         </div>

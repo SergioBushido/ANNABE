@@ -42,23 +42,45 @@ export default function Footer() {
                     </div>
                     <div>
                         <h3 className="text-white font-bold text-lg mb-4">Síguenos</h3>
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-gray-400 hover:text-brand-accent text-xl">
+                        <div className="flex space-x-4 mb-6">
+                            <a href="https://www.facebook.com/ALEXISARROCHA/?locale=es_ES" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-accent text-xl">
                                 <i className="fab fa-facebook"></i>
                             </a>
-                            <a href="#" className="text-gray-400 hover:text-brand-accent text-xl">
+                            <a href="https://www.instagram.com/mantenimientos.annabe/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-accent text-xl">
                                 <i className="fab fa-instagram"></i>
                             </a>
-                            <a href="#" className="text-gray-400 hover:text-brand-accent text-xl">
-                                <i className="fab fa-whatsapp"></i>
+                            <a href="https://www.linkedin.com/in/mantenimientos-annabe-alexis-arrocha-669696293/?originalSubdomain=es" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-accent text-xl">
+                                <i className="fab fa-linkedin"></i>
                             </a>
                         </div>
+                        <a
+                            href="https://wa.me/34637417990"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full transition-colors"
+                        >
+                            <i className="fab fa-whatsapp text-xl"></i> Síguenos
+                        </a>
                     </div>
                 </div>
                 <div className="border-t border-gray-900 pt-8 text-center text-xs">
-                    <p>
-                        &copy; <span id="year">{currentYear}</span> Mantenimientos Annabe. Todos los derechos reservados.
-                    </p>
+                    <div className="space-y-2">
+                        <p>
+                            &copy; <span id="year">{currentYear}</span> Mantenimientos Annabe. Todos los derechos reservados.
+                        </p>
+                        <p className="flex flex-wrap justify-center gap-2 text-gray-600">
+                            <Link href="/aviso-legal" className="hover:text-brand-accent transition-colors">Aviso legal</Link>
+                            <span>·</span>
+                            <Link href="/politica-privacidad" className="hover:text-brand-accent transition-colors">Política de privacidad</Link>
+                            <span>·</span>
+                            <Link href="/politica-cookies" className="hover:text-brand-accent transition-colors">Política de Cookies</Link>
+                            <span>·</span>
+                            <Link href="/canal-denuncias" className="hover:text-brand-accent transition-colors">Canal de denuncias</Link>
+                        </p>
+                        <p className="pt-2 text-[10px] text-gray-700">
+                            Diseñado y desarrollo por <a href="https://e-asy.es" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">E-ASY | Consultoría IT & Agencia Digital</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -10,7 +10,7 @@ export default function About() {
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="w-full md:w-1/2">
                             <div className="relative">
-                                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a783?q=80&w=2070&auto=format&fit=crop" alt="Trabajador Profesional" className="rounded-lg shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-500 border border-gray-700" />
+                                <img src="/img/Alexis.jpg" alt="Trabajador Profesional" className="rounded-lg shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-500 border border-gray-700" />
                                 <div className="absolute -bottom-6 -right-6 bg-brand-accent text-brand-darker p-6 rounded shadow-lg hidden md:block">
                                     <p className="font-bold text-2xl">100%</p>
                                     <p className="text-sm font-semibold uppercase">Clientes Satisfechos</p>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ImageCarousel from "@/components/ImageCarousel";
 
 export default function Home() {
   return (
@@ -78,41 +79,60 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Fontanería */}
-            <div className="bg-gray-900 border border-gray-800 p-8 rounded-2xl">
+            <div className="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-blue-900/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 bg-blue-900/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
                   <i className="fas fa-faucet"></i>
                 </div>
-                <h3 className="text-2xl font-bold text-white">Fontanería</h3>
+                <h3 className="text-xl font-bold text-white">Fontanería</h3>
               </div>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Revisión y certificación de instalaciones de agua.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Cálculos y memorias técnicas.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Instalaciones nuevas, mantenimientos y reparaciones.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Localización de fugas (gas traza, geófono, termografía).</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Sustitución y ajustes de griferías y mecanismos.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Desatascos y limpieza de desagües.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Montaje y reparación de calentadores eléctricos.</li>
+              <ul className="space-y-3 text-gray-300 text-sm flex-grow">
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Revisión y certificación de instalaciones de agua.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Cálculos y memorias técnicas.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Instalaciones nuevas, mantenimientos y reparaciones.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Localización de fugas (gas traza, geófono, termografía).</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Sustitución y ajustes de griferías y mecanismos.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Desatascos y limpieza de desagües.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Montaje y reparación de calentadores eléctricos.</span></li>
               </ul>
             </div>
 
             {/* Electricidad */}
-            <div className="bg-gray-900 border border-gray-800 p-8 rounded-2xl">
+            <div className="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-yellow-900/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 bg-yellow-900/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
                   <i className="fas fa-bolt"></i>
                 </div>
-                <h3 className="text-2xl font-bold text-white">Instalación Eléctrica</h3>
+                <h3 className="text-xl font-bold text-white">Instalación Eléctrica</h3>
               </div>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Revisión y certificación de instalaciones eléctricas.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Cálculos y memorias técnicas de diseño.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Instalaciones de punto de recargas de vehículos.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Localización y reparación de averías.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Monitorización de instalaciones.</li>
-                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1"></i> Comparativas de facturas, altas y cambios de titularidad.</li>
+              <ul className="space-y-3 text-gray-300 text-sm flex-grow">
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Revisión y certificación de instalaciones eléctricas.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Cálculos y memorias técnicas de diseño.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Instalaciones de punto de recargas de vehículos.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Localización y reparación de averías.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Monitorización de instalaciones.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Comparativas de facturas, altas y cambios de titularidad.</span></li>
+              </ul>
+            </div>
+
+            {/* Gas */}
+            <div className="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-red-900/20 text-red-500 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                  <i className="fas fa-fire"></i>
+                </div>
+                <h3 className="text-xl font-bold text-white">Instalación de Gas</h3>
+              </div>
+              <p className="text-gray-400 text-sm mb-4">
+                Realizamos instalaciones de gas tanto en viviendas como en locales comerciales. Garantizamos un servicio de calidad, seguro y eficiente.
+              </p>
+              <ul className="space-y-3 text-gray-300 text-sm flex-grow">
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Instalaciones y certificaciones.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Revisiones periódicas y mantenimientos.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Instalación, mantenimiento y reparación de calentadores y calderas.</span></li>
+                <li className="flex items-start gap-3"><i className="fas fa-check text-brand-accent mt-1 flex-shrink-0"></i> <span>Agente de puesta en marcha de aparatos a gas.</span></li>
               </ul>
             </div>
           </div>
@@ -131,34 +151,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-sans font-bold text-white mb-4">Galería de Proyectos</h2>
             <div className="w-24 h-1 bg-brand-accent mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Placeholders for gallery */}
-            <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative group">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-600 group-hover:bg-gray-800/80 transition-all">
-                <i className="fas fa-images text-4xl"></i>
-              </div>
-              {/* <img src="..." alt="Proyecto 1" className="w-full h-full object-cover" /> */}
-              <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white font-bold">Instalación Comercial</span>
-              </div>
-            </div>
-            <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative group">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-600 group-hover:bg-gray-800/80 transition-all">
-                <i className="fas fa-images text-4xl"></i>
-              </div>
-              <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white font-bold">Reforma Integral</span>
-              </div>
-            </div>
-            <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative group">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-600 group-hover:bg-gray-800/80 transition-all">
-                <i className="fas fa-images text-4xl"></i>
-              </div>
-              <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white font-bold">Mantenimiento</span>
-              </div>
-            </div>
-          </div>
+
+          <ImageCarousel />
+
         </div>
       </section>
 
